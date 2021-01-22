@@ -1,0 +1,24 @@
+<h1> Buscador
+</h1>
+<hr>
+
+<div class="row" *ngIf="villanos.length == 0">
+    <div class="c-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen Resultados
+        </div>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="villanos.length != 0">
+    <div class="col" *ngFor="let villano of villanos">
+        <div class="card">
+            <img [src]="villano.img" class="card-img-top" [alt]="villano.casa">
+            <div class="card-body">
+                <h5 class="card-title">{{villano.nombre}}</h5>
+                <p class="card-text">{{villano.bio}}</p>
+                <button (click)="verVillano(villano.idx)" type="button" class="btn btn-primary btn-block">Ver Mas...</button>
+            </div>
+        </div>
+    </div>
+</div>

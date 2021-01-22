@@ -1,0 +1,20 @@
+<div>
+    <div class="row">
+
+        <div class="col-md-4">
+            <h2> {{villano.nombre | uppercase}} <small>{{villano.aparicion | date:'y'}}</small></h2>
+            <img src="../../../{{villano.img}}" class="img-fluid">
+            <br><br>
+            <a [routerLink]="['/villanos']" class="btn btn-danger">Regresar</a>
+        </div>
+
+        <div class="col-md-8">
+            <h3>{{villano.nombre}}</h3>
+            <p>{{villano.bio}}</p>
+            <div>
+                <img *ngIf="villano.casa=='DC' " class="img-logo" src="../../../assets/img/dc.png" alt="DC">
+                <img *ngIf="villano.casa=='Marvel'" class="img-logo" src="../../../assets/img/marvel.png" alt="MARVEL">
+            </div>
+        </div>
+    </div>
+</div>

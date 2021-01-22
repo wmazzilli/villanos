@@ -1,0 +1,17 @@
+<h1> Villanos <small>Marvel and DC</small>
+</h1>
+<hr>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let villano of villanos; let i=index">
+        <div class="card">
+            <img [src]="villano.img" class="card-img-top" [alt]="villano.casa">
+            <div class="card-body">
+                <h5 class="card-title">{{villano.nombre}}</h5>
+                <p class="card-text">{{villano.bio}}</p>
+                <!-- <a [routerLink]="['/heroe',i]" class="btn btn-primary">Ver mas...</a> -->
+                <button (click)="verVillano(i)" type="button" class="btn btn-primary btn-block">Ver Mas...</button>
+            </div>
+        </div>
+    </div>
+</div>
